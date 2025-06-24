@@ -8,7 +8,7 @@ import canciones from "./controllers/canciones.js";
 
 app.use(express.json());
 
-app.get("/", (_, res) => {
+app.get("/", (req, res) => {
     res.send("SpoTICfy API working!");
 });
 

@@ -33,11 +33,10 @@ app.get("/artistas/:id/canciones", artistas.getCancionesByArtista);
 // ...
 app.get("/albumes", albumes.getAlbumes);
 app.get("/albumes/:id", albumes.getAlbum);
-app.post("/albumes", albumes.getAlbum);
-app.put("/albumes/:id", albumes.getAlbum);
-app.delete("/albumes/:id", albumes.getAlbum);
-app.get("/albumes/:id/artistas", albumes.getAlbum);
-app.get("/albumes/:id/artistas", albumes.getAlbum);
+app.post("/albumes", albumes.createAlbum);
+app.put("/albumes/:id", albumes.updateAlbum);
+app.delete("/albumes/:id", albumes.deleteAlbum);
+app.get("/albumes/:id/canciones", albumes.getCancionesByAlbum);
 
 
 // Canciones
@@ -49,11 +48,10 @@ app.get("/albumes/:id/artistas", albumes.getAlbum);
 // ...
 app.get("/canciones", canciones.getCanciones);
 app.get("/canciones/:id", canciones.getCancion);
-app.post("/canciones", canciones.getCancion);
-app.put("/canciones/:id", canciones.getCancion);
-app.delete("/canciones/:id", canciones.getCancion);
-app.get("/canciones/:id/artistas", canciones.getCancion);
-app.get("/canciones/:id/artistas", canciones.getCancion);
+app.post("/canciones", canciones.createCancion);
+app.put("/canciones/:id", canciones.updateCancion);
+app.delete("/canciones/:id", canciones.deleteCancion);
+app.put("/canciones/:id/reproducir", canciones.reproducirCancion);
 
 app.listen(port, () => {
     console.log(`SpoTICfy API listening at http://localhost:${port}`);

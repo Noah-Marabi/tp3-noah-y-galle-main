@@ -111,10 +111,11 @@ const getCancionesByAlbum = async (req, res) => {
         const result = await query(
             `SELECT 
             albumes.id, 
-            canciones .nombre, 
+            canciones.nombre,
+            albumes.nombre 
 
         FROM albumes 
-            JOIN canciones ON albumes.id = cancion.album
+            JOIN canciones ON albumes.id = canciones.album
         WHERE album = $1`,
             [req.params.id]
         );

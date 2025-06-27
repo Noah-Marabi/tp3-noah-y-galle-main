@@ -136,6 +136,8 @@ const reproducirCancion = async (req, res) => {
             WHERE id = $1`,
             [id]
         );
+        const result = await query("SELECT * FROM canciones WHERE id = $1", [id]);
+
 
         res.json(result.rows);
     } catch (error) {

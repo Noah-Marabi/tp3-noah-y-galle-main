@@ -31,6 +31,14 @@ app.get("/artistas/:id/canciones", artistas.getCancionesByArtista);
 // albumes.getAlbumes;
 // albumes.getAlbum;
 // ...
+app.get("/albumes", albumes.getAlbumes);
+app.get("/albumes/:id", albumes.getAlbum);
+app.post("/albumes", albumes.getAlbum);
+app.put("/albumes/:id", albumes.getAlbum);
+app.delete("/albumes/:id", albumes.getAlbum);
+app.get("/albumes/:id/artistas", albumes.getAlbum);
+app.get("/albumes/:id/artistas", albumes.getAlbum);
+
 
 // Canciones
 
@@ -39,6 +47,13 @@ app.get("/artistas/:id/canciones", artistas.getCancionesByArtista);
 // canciones.getCanciones;
 // canciones.getCancion;
 // ...
+app.get("/canciones", canciones.getCanciones);
+app.get("/canciones/:id", canciones.getCancion);
+app.post("/canciones", canciones.getCancion);
+app.put("/canciones/:id", canciones.getCancion);
+app.delete("/canciones/:id", canciones.getCancion);
+app.get("/canciones/:id/artistas", canciones.getCancion);
+app.get("/canciones/:id/artistas", canciones.getCancion);
 
 app.listen(port, () => {
     console.log(`SpoTICfy API listening at http://localhost:${port}`);
